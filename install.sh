@@ -89,7 +89,8 @@ try_install \
     ttf-jetbrains-mono-nerd ttf-firacode-nerd ttf-hack-nerd \
     noto-fonts noto-fonts-emoji noto-fonts-cjk \
     ttf-font-awesome ttf-meslo-nerd \
-    awesome-terminal-fonts
+    awesome-terminal-fonts \
+    librsvg  # needed by wallpaper generator
 
 # ============================================================
 # 3. MULTIMEDIA: VOICE, VIDEO, TTS, OCR
@@ -250,7 +251,11 @@ link "$DOTFILES/btop/btop.conf"          "$HOME_DIR/.config/btop/btop.conf"
 link "$DOTFILES/htop/htoprc"             "$HOME_DIR/.config/htop/htoprc"
 link "$DOTFILES/tmux/tmux.conf"          "$HOME_DIR/.tmux.conf"
 
-# Wallpaper
+# Wallpaper — generate fresh if missing (procedural, no binary fabrication)
+mkdir -p "$HOME_DIR/.local/share/wallpapers"
+if [ ! -f "$DOTFILES/wallpapers/hacker.png" ] && command -v rsvg-convert >/dev/null 2>&1; then
+    bash "$DOTFILES/scripts/gen-wallpaper.sh" "$DOTFILES/wallpapers/hacker.png" || true
+fi
 cp -f "$DOTFILES/wallpapers/hacker.png" "$HOME_DIR/.local/share/wallpapers/" 2>/dev/null || true
 
 # Init notes vault

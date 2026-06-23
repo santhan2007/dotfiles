@@ -1,0 +1,26 @@
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Editor swap files
+*.swp
+*.swo
+*~
+.*.swp
+.*.swo
+
+# Anything that looks like a secret — never commit
+*.pem
+*.key
+id_rsa*
+id_ed25519
+*.token
+
+# Build artifacts
+*.pkg.tar.zst
+src/
+pkg/
+
+# Personal noise
+.bash_history
+.cache/

@@ -1,0 +1,9 @@
+[user]
+	name = santhan2007
+	email = santhansumedh2007@gmail.com
+[init]
+	defaultBranch = main
+[core]
+	autocrlf = input
+[pull]
+	rebase = true

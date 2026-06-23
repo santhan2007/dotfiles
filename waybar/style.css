@@ -1,0 +1,121 @@
+/* Waybar — hacker theme (Catppuccin Mocha) */
+
+* {
+    font-family: "JetBrains Mono Nerd Font", monospace;
+    font-size: 13px;
+    min-height: 0;
+    border: none;
+    border-radius: 0;
+}
+
+window#waybar {
+    background-color: rgba(17, 17, 27, 0.85);
+    color: #cdd6f4;
+    transition-property: background-color;
+    transition-duration: 0.2s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+/* Tooltips */
+tooltip {
+    background-color: #1e1e2e;
+    border: 1px solid #c6a0f6;
+    border-radius: 6px;
+    color: #cdd6f4;
+    padding: 6px 10px;
+}
+
+/* Workspaces */
+#workspaces button {
+    padding: 0 8px;
+    background-color: transparent;
+    color: #6c7086;
+    border-bottom: 2px solid transparent;
+}
+
+#workspaces button.active {
+    color: #c6a0f6;
+    border-bottom: 2px solid #c6a0f6;
+}
+
+#workspaces button.urgent {
+    color: #f38ba8;
+}
+
+#workspaces button:hover {
+    color: #f5bde6;
+    box-shadow: inherit;
+    text-shadow: inherit;
+}
+
+/* Window */
+#window {
+    color: #a6adc8;
+    font-style: italic;
+}
+
+/* Clock */
+#clock {
+    color: #fab387;
+    font-weight: bold;
+}
+
+/* Audio */
+#pulseaudio {
+    color: #94e2d5;
+    padding: 0 8px;
+}
+
+#pulseaudio.muted {
+    color: #6c7086;
+}
+
+/* Network */
+#network {
+    color: #89b4fa;
+    padding: 0 8px;
+}
+
+#network.disconnected {
+    color: #f38ba8;
+}
+
+/* CPU / Memory */
+#cpu, #memory {
+    color: #f9e2af;
+    padding: 0 8px;
+}
+
+/* Battery */
+#battery {
+    color: #a6e3a1;
+    padding: 0 8px;
+}
+
+#battery.charging {
+    color: #f9e2af;
+}
+
+#battery.warning:not(.charging) {
+    color: #fab387;
+}
+
+#battery.critical:not(.charging) {
+    color: #f38ba8;
+}
+
+/* Tray */
+#tray {
+    padding: 0 8px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+}

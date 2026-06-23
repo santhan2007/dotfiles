@@ -1,0 +1,31 @@
+{
+    "format": "<span color=\"#c6a0f6\" font_weight=\"bold\"> {symbol} </span> <span color=\"#cdd6f4\">{summary}</span>",
+    "format-low": "<span color=\"#a6e3a1\" font_weight=\"bold\"> {symbol} </span> <span color=\"#cdd6f4\">{summary}</span>",
+    "format-critical": "<span color=\"#f38ba8\" font_weight=\"bold\"> {symbol} </span> <span color=\"#cdd6f4\">{summary}</span>",
+
+    "default-timeout": 5000,
+    "ignore-timeout": 0,
+
+    "app-name-overrides": {
+        "Spotify": "music"
+    },
+
+    "category": {
+        "email": {
+            "icon": "",
+            "state": {
+                "critical": {
+                    "border-color": "#f38ba8"
+                }
+            }
+        },
+        "system": {
+            "icon": "",
+            "state": {
+                "critical": {
+                    "border-color": "#f38ba8"
+                }
+            }
+        }
+    }
+}

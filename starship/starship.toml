@@ -1,0 +1,98 @@
+# santhan's starship prompt — hacker-style
+
+format = """
+[░▒▓](#a6a6a6)\
+$os\
+$username\
+[](bg:#c6a0f6 fg:#1e1e2e)\
+$directory\
+[](fg:#c6a0f6 bg:#94e2d5)\
+$git_branch\
+$git_status\
+[](fg:#94e2d5 bg:#fab387)\
+$nodejs\
+$rust\
+$python\
+$golang\
+[](fg:#fab387 bg:#89b4fa)\
+$time\
+[ ](fg:#89b4fa)\
+"""
+
+# OS icon
+[os]
+disabled = false
+style = "bg:#a6a6a6 fg:#1e1e2e"
+format = "[ $symbol ](bg:#a6a6a6 fg:#1e1e2e)"
+
+[os.symbols]
+Arch = ""
+Ubuntu = ""
+Debian = "󰣭"
+Macos = ""
+Windows = "󰍲"
+Linux = "󰌽"
+
+# Username
+[username]
+show_always = true
+style_user = "bg:#1e1e2e fg:#cdd6f4"
+style_root = "bg:#f38ba8 fg:#1e1e2e"
+format = "[ $user ]($style)"
+
+# Directory
+[directory]
+style = "bg:#c6a0f6 fg:#1e1e2e"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = "󰝚 "
+"Pictures" = " "
+"Developer" = "󰲋 "
+
+# Git
+[git_branch]
+symbol = ""
+style = "bg:#94e2d5 fg:#1e1e2e"
+format = "[ $symbol $branch ]($style)"
+
+[git_status]
+style = "bg:#94e2d5 fg:#1e1e2e"
+format = "[$all_status$ahead_behind ]($style)"
+
+# Languages
+[nodejs]
+symbol = ""
+style = "bg:#fab387 fg:#1e1e2e"
+format = "[ $symbol ($version) ]($style)"
+
+[rust]
+symbol = ""
+style = "bg:#fab387 fg:#1e1e2e"
+format = "[ $symbol ($version) ]($style)"
+
+[python]
+symbol = ""
+style = "bg:#fab387 fg:#1e1e2e"
+format = "[ $symbol ($version) ]($style)"
+
+[golang]
+symbol = ""
+style = "bg:#fab387 fg:#1e1e2e"
+format = "[ $symbol ($version) ]($style)"
+
+# Time
+[time]
+disabled = false
+time_format = "%R"
+style = "bg:#89b4fa fg:#1e1e2e"
+format = "[ 󰥔 $time ]($style)"
+
+# Character
+[character]
+success_symbol = "[➜](bold #a6e3a1)"
+error_symbol = "[✗](bold #f38ba8)"

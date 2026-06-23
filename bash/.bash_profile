@@ -1,8 +1,11 @@
-#
 # ~/.bash_profile
-#
 
-[[ -f ~/.bashrc ]] && . ~/.bashrc
+# Source bashrc for interactive shells
+if [ -f ~/.bashrc ]; then
+    . ~/.bashrc
+fi
 
-# Hermes Agent — ensure ~/.local/bin is on PATH
-export PATH="$HOME/.local/bin:$PATH"
+# Start graphical environment on tty1 if not already running
+if [ -z "$DISPLAY" ] && [ "$(tty)" = "/dev/tty1" ]; then
+    exec Hyprland
+fi

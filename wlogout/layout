@@ -1,0 +1,30 @@
+// wlogout — logout menu
+{
+    "label-position": "top",
+    "buttons": [
+        {
+            "label": "lock",
+            "action": "loginctl lock-session",
+            "text": "Lock",
+            "icon": "/usr/share/wlogout/icons/lock.png"
+        },
+        {
+            "label": "logout",
+            "action": "loginctl terminate-user $(whoami)",
+            "text": "Logout",
+            "icon": "/usr/share/wlogout/icons/logout.png"
+        },
+        {
+            "label": "reboot",
+            "action": "systemctl reboot",
+            "text": "Reboot",
+            "icon": "/usr/share/wlogout/icons/reboot.png"
+        },
+        {
+            "label": "shutdown",
+            "action": "systemctl poweroff",
+            "text": "Shutdown",
+            "icon": "/usr/share/wlogout/icons/shutdown.png"
+        }
+    ]
+}

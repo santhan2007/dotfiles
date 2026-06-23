@@ -1,83 +1,108 @@
 # santhan's Arch Linux hacker desktop
 
-Bootstrap-ready Arch Linux setup with a Hyprland-based hacker aesthetic, full cybersecurity toolkit, and curated dev environment.
+Full Hyprland-based hacker workstation with curated cybersecurity toolkit, professional dev environment, voice/video/multimedia tools, and notes/sync/backup stack. Clone + run = ready.
 
-## What's included
+## What's inside (full list)
 
-### Rice (Hyprland stack)
-  • **Hyprland** — Wayland compositor with snappy animations
-  • **hyprlock** — hacker-themed lock/login screen with timestamp + neon text
-  • **hypridle** — auto-lock after 5 min idle
-  • **Waybar** — top status bar with workspaces, clock, system stats
-  • **Kitty** — terminal with Catppuccin Mocha theme
-  • **Rofi** — app launcher
-  • **swaync** — notification daemon
-  • **wlogout** — power menu
-  • **mako** — low-level notifications
-  • **Starship** — git-aware shell prompt
+### Desktop (Hyprland Wayland rice)
+- Hyprland, hyprlock, hypridle, hyprshot
+- Waybar (workspaces, system stats, themed)
+- Kitty terminal (Catppuccin Mocha)
+- Rofi launcher, swaync, mako, wlogout
+- Starship shell prompt
+- swww animated wallpapers
 
 ### Cybersecurity toolkit
-Recon: `nmap`, `masscan`, `gobuster`, `ffuf`, `feroxbuster`
-Web: `burpsuite`, `zaproxy`, `sqlmap`, `nikto`, `wfuzz`
-Auth/Crack: `john`, `hashcat`, `hydra`, `seclists`, `wordlists`
-Network: `wireshark`, `tcpdump`, `netcat`, `socat`, `ettercap`, `bettercap`
-Wireless: `aircrack-ng`, `wifite`, `kismet`
-Exploit: `metasploit`, `crackmapexec`, `impacket`, `responder`, `bloodhound`
-Reverse Eng: `ghidra`, `radare2`, `rizin`, `cutter`, `gdb`, `pwndbg`
-Forensics: `volatility3`, `binwalk`, `foremost`, `sleuthkit`
-Privacy: `tor`, `torsocks`, `proxychains-ng`, `macchanger`
-VPN/Net: `tor`, `proxychains-ng`
+**Recon**: nmap, masscan, gobuster, ffuf, feroxbuster, dirb, subfinder, httpx, nuclei, nikto, wfuzz, theharvester, recon-ng, maltego, dnsutils
+**Web**: burpsuite, zaproxy, sqlmap, wpscan
+**Auth/Crack**: john, hashcat, hydra, hashcat-utils, seclists, wordlists, steghide, stegseek
+**Network**: wireshark, tcpdump, netcat, socat, ettercap, bettercap
+**Wireless**: aircrack-ng, wifite, kismet
+**Exploit**: metasploit, crackmapexec, impacket, responder, bloodhound, evil-winrm, routersploit, exploitdb, searchsploit
+**PrivEsc**: linpeas, winpeas, mimipenguin
+**Social**: setoolkit, beef-xss
+**RevEng**: ghidra, radare2, rizin, cutter, gdb+pwndbg
+**Forensics**: volatility3, binwalk, foremost, sleuthkit
+**Privacy**: tor, torsocks, proxychains-ng, macchanger, veracrypt, keepassxc, pass, gpg
 
-### Dev environment
-Languages: `python`, `go`, `rust`, `nodejs`, `gcc`, `gdb`
-Build: `cmake`, `ninja`, `make`, `pkgconf`
-Containers: `docker`, `docker-compose`
-Shell: `zsh`, `tmux`, `fzf`, `ripgrep`, `fd`, `bat`, `eza`, `btop`, `neofetch`, `starship`
-Editor: `neovim`
+### Languages & dev tools
+python, go, rust, nodejs, gcc, gdb, cmake, ninja, docker, docker-compose
+LSP: pyright, gopls, rust-analyzer, marksman
+Lint/format: shellcheck, shfmt, stylua, black, ruff, pyright, isort
 
-### Pre-configured aliases (in .bashrc)
-  • `ls/ll/lt` → eza (icons, tree view)
-  • `cat` → bat
-  • `find` → fd
-  • `top` → btop
-  • `nmap-quick/full/stealth` → preconfigured scans
-  • `sniff/sniff-cli` → wireshark/tshark
-  • `crack/hashcrack` → john/hashcat
-  • `update/install/search/remove/cleanup` → pacman shortcuts
+### Shell productivity
+zsh, tmux, fzf, ripgrep, fd, bat, eza, btop, htop, neofetch, starship, zoxide, mcfly, lazygit, lazydocker, broot, delta, dysk, sd, xsv, tokei, hyperfine, pueue, just, watchexec, tldr, navi, cheat, ipython, bpython, glow, mdcat, lynx, w3m
 
-## Install on a fresh Arch
+### Editors
+- **Neovim** (lazy.nvim, LSP, telescope, treesitter, catppuccin, lualine, gitsigns)
+- nvim-tree file explorer
+- All LSPs preconfigured
 
+### Notes / Productivity
+obsidian, task, timewarrior, calcurse, khal, vdirsyncer, signal-desktop, discord
+
+### Sync / Backup / Cloud
+syncthing, rclone, borg, timeshift
+
+### Multimedia (voice / video / animations)
+**Media**: mpv, vlc, obs-studio, ffmpeg, yt-dlp, streamlink, cava, cmus, sox, imagemagick
+**Voice (TTS)**: piper-tts (neural), espeak-ng, festival — `voice "text"` or `say "text"`
+**Speech-to-text**: whisper-cpp (local OpenAI Whisper) — `transcribe recording.wav` or `transcribe --live`
+**OCR**: tesseract
+
+### System monitoring
+btop, htop, btop, glances, iotop, powertop, iftop, nethogs, sysstat
+
+### Helper commands (in PATH)
+- `hack` — matrix-style boot animation in current shell
+- `voice "text"` — text-to-speech
+- `say "text"` — alias for voice
+- `transcribe file.wav` — speech-to-text (local)
+- `transcribe --live` — record from mic, transcribe
+- `sshot` — screenshot, auto-save + copy to clipboard
+- `sshot region` — region screenshot
+- `sshot window` — window screenshot
+- `lg` — lazygit
+- `ld` — lazydocker
+
+### Keybindings (Hyprland)
+- `SUPER + RETURN` — terminal
+- `SUPER + D` — app launcher (rofi)
+- `SUPER + L` — lock (hacker login screen)
+- `SUPER + Q` — kill active window
+- `SUPER + F` — fullscreen
+- `SUPER + V` — toggle floating
+- `Print` — screenshot region
+- `SHIFT + Print` — screenshot full
+
+## Install
+
+### On a fresh Arch install (manual)
 ```bash
-# 1. Boot Arch ISO, partition, mount, pacstrap, arch-chroot
-# 2. Inside chroot:
 pacman -S git
 git clone https://github.com/santhan2007/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 ./install.sh
 ```
-
 The install script:
-  1. Installs everything (pacman + AUR via paru)
-  2. Enables services (NetworkManager, docker)
-  3. Symlinks all dotfiles to $HOME
-  4. Configures /etc/makepkg.conf
-  5. Reboot, select Hyprland at login
+1. Installs everything (pacman + AUR via paru)
+2. Enables services (NetworkManager, docker)
+3. Symlinks all dotfiles
+4. Configures /etc/makepkg.conf
+5. Reboot, select Hyprland at SDDM
 
-## Usage
-
-  • **Login screen** → automatic on lock/suspend (after 5 min idle)
-  • **App launcher** → `SUPER + D`
-  • **Terminal** → `SUPER + RETURN`
-  • **Lock now** → `SUPER + L`
-  • **Logout/Reboot/Shutdown** → run `wlogout`
-  • **Screenshot** → `Print` (selection) or `SHIFT + Print` (full)
-
-## Color palette (Catppuccin Mocha)
-
+### On an existing system (just install packages, skip rice)
+```bash
+sudo pacman -S --needed - < pkglist.txt
 ```
-background  #1e1e2e
+
+## Color palette (Catppuccin Mocha — consistent everywhere)
+```
+bg          #1e1e2e
 surface     #313244
+overlay     #45475a
 text        #cdd6f4
+subtext     #a6adc8
 accent      #c6a0f6  (lavender)
 green       #a6e3a1
 red         #f38ba8
@@ -85,10 +110,10 @@ yellow      #f9e2af
 blue        #89b4fa
 teal        #94e2d5
 pink        #f5bde6
+orange      #fab387
 ```
 
-## Files in this repo
-
+## Repo structure
 ```
 bash/             .bashrc, .bash_profile, .bash_logout
 git/              .gitconfig
@@ -100,24 +125,24 @@ mako/             config
 swaync/           config.json
 wlogout/          layout, style.css
 starship/         starship.toml
-scripts/          hacker-login.sh (matrix-style boot animation)
+nvim/             init.lua (lazy.nvim + LSP + telescope + catppuccin)
+lazygit/          config.yml
+delta/            delta.gitconfig
+btop/             btop.conf
+htop/             htoprc
+tmux/             tmux.conf
+scripts/          hack, voice, say, transcribe, sshot, lg, ld, hacker-login.sh
 makepkg/          makepkg.conf snippet
-wallpapers/       hacker.png (placeholder)
+wallpapers/       hacker.png
 install.sh        one-shot bootstrap
+pkglist.txt       flat package list
+README.md         this file
 ```
 
 ## Notes
+- SSH private keys are NEVER committed. Generate per machine.
+- Idempotent install — re-running is safe (existing configs → `.bak.<timestamp>`).
+- The hacker aesthetic is the visual identity; the underlying tools are professional-grade and useful for KLU CSE Security coursework.
 
-  • **SSH private keys are NEVER committed.** Generate per-machine with `ssh-keygen`.
-  • **No secrets in this repo.** Verified clean.
-  • **Idempotent install.** Re-running `./install.sh` is safe — existing configs get backed up with timestamp suffix.
-
-## For authorized security testing only
-
-Tools installed here are dual-use. Use them only on:
-  • Systems you own
-  • Systems you have written permission to test
-  • CTF environments
-  • Lab environments designed for security education
-
-Unauthorized access to computer systems is illegal under India's IT Act 2000 (and equivalent laws elsewhere). KLU CSE Security coursework expects responsible disclosure.
+## Authorized use only
+Tools in this repo are dual-use. Use them only on systems you own, have written permission to test, or are part of CTF / lab environments. KLU CSE Security coursework expects responsible disclosure.

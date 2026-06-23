@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# ld — lazydocker shortcut
+exec lazydocker "$@"

@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# voice — local text-to-speech (offline, no cloud)
+# Usage: voice "hello world"
+#        echo "hello" | voice
+#
+# Tries piper (neural, high quality) first, falls back to espeak.
+
+TEXT="${*:-$(cat)}"
+
+if command -v piper >/dev/null 2>&1; then
+    echo "$TEXT" | piper --output_dir /tmp --model en_US-lessac-medium
+    aplay /tmp/*.wav 2>/dev/null
+elif command -v espeak-ng >/dev/null 2>&1; then
+    echo "$TEXT" | espeak-ng --stdin -v en+m3 -s 175 -p 50
+elif command -v festival >/dev/null 2>&1; then
+    echo "$TEXT" | festival --tts
+else
+    echo "no TTS engine installed"
+    exit 1
+fi

@@ -1,0 +1,36 @@
+gui:
+  theme:
+    activeBorderColor:
+      - green
+      - bold
+    inactiveBorderColor:
+      - default
+  border: rounded
+  showFileTree: false
+  showRandomTip: false
+
+git:
+  paging:
+    pager: delta --dark --paging always
+  skipHooks: false
+  autoFetch: off
+
+confirmCommands:
+  reset: true
+  checkout: true
+  branch: false
+  deleteUntracked: false
+  revert: true
+
+os:
+  editPreset: vim
+  editCommand: nvim
+  openCommand: xdg-open
+  openLinkCommand: xdg-open
+
+notif:
+  toast: true
+
+keybinding:
+  universal:
+    quit: q

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# hack — trigger the hacker boot animation in current shell
+
+bash ~/.local/bin/hacker-login

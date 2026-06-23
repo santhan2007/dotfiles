@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# say — short alias for voice (easier to type)
+# Usage: say hello world
+
+voice "$@"

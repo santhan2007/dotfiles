@@ -1,0 +1,33 @@
+# htop config — Catppuccin Mocha colors
+
+header_margin = 1
+hide_kernel_threads = 1
+hide_userland_threads = 0
+shadow_draw = 0
+show_program_path = 1
+show_merged_command = 0
+tree_view = 1
+tree_view_always_by_pid = 0
+show_thread_names = 0
+show_cpu_frequency = 0
+show_cpu_temperature = 0
+degree_fahrenheit = 0
+update_process_names = 0
+account_guest_in_cpu_meter = 0
+delay = 15
+left_meters = LeftCPUs Memory Swap
+left_meter_modes = 1 1 1
+right_meters = RightCPUs Tasks LoadAverage Uptime
+right_meter_modes = 1 2 2 2
+hide_function_bar = 0
+
+color_scheme = 6
+
+# Custom colors (color_scheme 6 = catppuccin-ish)
+header_color = #c6a0f6
+proc_color = #cdd6f4
+highlight_color = #f5bde6
+highlight_color_sec = #94e2d5
+meter1_color = #89b4fa
+meter2_color = #94e2d5
+meter3_color = #c6a0f6

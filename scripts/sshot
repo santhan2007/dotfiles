@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# sshot — screenshot tool with auto-save + copy
+# Usage:
+#   sshot              — full screen, save to ~/Pictures and copy to clipboard
+#   sshot region       — select region
+#   sshot window       — active window
+
+DIR="$HOME/Pictures/screenshots"
+mkdir -p "$DIR"
+TS=$(date +%Y%m%d-%H%M%S)
+
+case "${1:-full}" in
+    region|r)
+        grim -g "$(slurp)" - | tee "$DIR/$TS-region.png" | wl-copy
+        ;;
+    window|w)
+        ACTIVE=$(hyprctl activewindow -j | jq -r '"\(.at[0]),\(.at[1]) \(.size[0])x\(.size[1])"')
+        grim -g "$ACTIVE" - | tee "$DIR/$TS-window.png" | wl-copy
+        ;;
+    full|*)
+        grim - | tee "$DIR/$TS-full.png" | wl-copy
+        ;;
+esac
+
+echo "saved: $DIR/$TS-$1.png"
+echo "copied to clipboard"

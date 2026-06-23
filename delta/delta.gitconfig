@@ -1,0 +1,33 @@
+# delta — beautiful git diffs (Catppuccin Mocha)
+[core]
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true
+    dark = true
+    line-numbers = true
+    side-by-side = false
+
+[delta "mocha"]
+    # background
+    minus = "#313244"
+    minus-emph = "#f38ba8"
+    minus-non-emph = "#6c7086"
+    plus = "#313244"
+    plus-emph = "#a6e3a1"
+    plus-non-emph = "#6c7086"
+
+    # foreground
+    commit-decoration = "#c6a0f6 bold"
+    commit-style = "raw"
+    file = "#89b4fa"
+    file-decoration = "#585b70"
+    hunk-header = "#fab387 bold"
+    hunk-header-decoration = "box ul"
+    line-numbers = "#585b70"
+
+[merge]
+    conflictStyle = zdiff3

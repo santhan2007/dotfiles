@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# transcribe — local speech-to-text (no cloud, OpenAI Whisper)
+# Usage: transcribe recording.wav
+#        transcribe --live   (record from mic until Ctrl-C)
+
+if [ "$1" = "--live" ]; then
+    TMPF=$(mktemp /tmp/live-XXXXXX.wav)
+    echo "Recording... Ctrl-C to stop."
+    trap "rm -f $TMPF" EXIT
+    if command -v arecord >/dev/null 2>&1; then
+        arecord -f cd "$TMPF"
+    elif command -v ffmpeg >/dev/null 2>&1; then
+        ffmpeg -f pulse -i default "$TMPF" -y
+    fi
+    whisper-cpp -m ~/.local/share/whisper/models/ggml-base.en.bin -f "$TMPF" 2>/dev/null
+else
+    whisper-cpp -m ~/.local/share/whisper/models/ggml-base.en.bin -f "$1"
+fi
